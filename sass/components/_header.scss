@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4.8rem;
+
+  // sass unables nested css
+  &__logo {
+    width: 5rem;
+  }
+
+  &__nav {
+    display: flex;
+    list-style: none;
+
+    & li:not(:last-of-type) {
+      margin-right: 4.6rem;
+    }
+  }
+}
