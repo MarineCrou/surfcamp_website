@@ -35,13 +35,12 @@ const Footer = () => {
             <li key={policy.slug}>
               <Link href={policy.slug}>
                 <p className="copy">{policy.display}</p>
-                {console.log(`these are the policies ${policy.display}`)}
+                {/* {console.log(`these are the policies ${policy.display}`)} */}
               </Link>
             </li>
           ))}
-          ;
         </ul>
-        <p>© Sam’s Surfcamp - all rights reserved</p>
+        <p className="copy"> © Sam’s Surfcamp - all rights reserved</p>
       </div>
     </footer>
   );
