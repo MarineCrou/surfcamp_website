@@ -30,16 +30,18 @@ const Footer = () => {
       </nav>
       <div className="footer__policies">
         <ul className="footer__policies-nav">
-          {policies.map((policy) => {
+          {policies.map((policy) => (
             // console.log(policy.display);
             <li key={policy.slug}>
               <Link href={policy.slug}>
-                {/* <p className="copy">{policy.display}</p> */}
-                console.log(policy.display);
+                <p className="copy">{policy.display}</p>
+                {console.log(`these are the policies ${policy.display}`)}
               </Link>
-            </li>;
-          })}
+            </li>
+          ))}
+          ;
         </ul>
+        <p>© Sam’s Surfcamp - all rights reserved</p>
       </div>
     </footer>
   );
