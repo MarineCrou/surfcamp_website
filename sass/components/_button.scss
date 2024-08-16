@@ -1,0 +1,32 @@
+.btn {
+  font-size: 2.5rem;
+
+  &--black {
+    background-color: black;
+    color: white;
+  }
+  &--small {
+    padding: 1rem 1.8rem;
+    border-radius: 2.5rem;
+  }
+
+  &--medium {
+    padding: 1.6rem 3.2rem;
+    border-radius: 3.2rem;
+  }
+
+  &--black {
+    background-color: black;
+    color: white;
+  }
+
+  &--turquoise {
+    background-color: $turquoise; //* This is the default theme color. Therfore, by default the dynamic {theme} will be replaced by the turquoise color, which we are defining here !!
+    color: white;
+  }
+
+  &--orange {
+    background-color: #ce822f;
+    color: white;
+  }
+}

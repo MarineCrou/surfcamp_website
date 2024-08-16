@@ -1,0 +1,46 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 83rem;
+  padding: 22rem 4.8rem 0;
+  margin-bottom: 12.5rem;
+
+  &__background {
+    position: absolute; //*So it always stays in the same spot. We want it at the:
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; //*Sends the background layer (including the image) to the back, so the text appears on top
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+      border-radius: 0 0 200px 200px;
+    }
+  }
+  &__headline {
+    margin-bottom: 6.5rem;
+
+    &--orange {
+      color: white; //* Creating an orange theme so the headline will turn orange in the hero section JSX file
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(
+      -50%,
+      50%
+    ); //? Firts one is x second is y (putting the logo in the center.
+
+    &--orange {
+      filter: invert(63%) sepia(28%) saturate(1097%) hue-rotate(349deg)
+        brightness(84%) contrast(91%); //? creating an orange logo to be featured when the theme is orange
+    }
+  }
+}
