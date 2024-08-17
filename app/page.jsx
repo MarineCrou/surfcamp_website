@@ -29,7 +29,9 @@ export default function Home() {
         atmosphere, [Location] sets the perfect stage for your surf adventure.
       </p>
     ),
-    button: <button className="btn btn--turquoise">Book Now</button>,
+    button: (
+      <button className="btn btn--medium btn--turquoise">Book Now</button>
+    ),
     reversed: false,
   };
 
