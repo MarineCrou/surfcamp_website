@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
-  const path = usePathname;
+  const path = usePathname();
 
   const navItems = [
     { display: "the camp.", slug: "/" },
