@@ -8,7 +8,7 @@ export default async function Home() {
     "http://127.0.0.1:1337/api/infoblocks-landing?populate=deep"
     // change local host (http://localhost:1337/api/infoblocks-landing) into 127.0.0.1: then the server #
   );
-  console.log(response);
+  console.log(response.data.data.attributes.info_blocks.data);
 
   const heroHeadline = (
     <>
