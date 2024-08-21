@@ -1,8 +1,15 @@
 import Image from "next/image";
+import axios from "axios";
 import HeroSection from "./_components/HeroSection";
 import InfoBlock from "./_components/InfoBlock";
 
-export default function Home() {
+export default async function Home() {
+  const response = await axios.get(
+    "http://127.0.0.1:1337/api/infoblocks-landing?populate=deep"
+    // change local host (http://localhost:1337/api/infoblocks-landing) into 127.0.0.1: then the server #
+  );
+  console.log(response);
+
   const heroHeadline = (
     <>
       <h1>barrel.</h1>
