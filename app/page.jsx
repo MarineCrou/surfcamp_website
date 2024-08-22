@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroSection from "./_components/HeroSection";
+import InfoBlock from "./_components/InfoBlock";
 import { fetchDataFromStrapi, processInfoBlocks } from "@/utils/strapi.utils";
 
 export default async function Home() {
@@ -19,6 +20,13 @@ export default async function Home() {
   return (
     <main>
       <HeroSection headline={heroHeadline} />
+      {infoBlockData.map((data) => {
+        console.log(
+          `This is the PAGE data being passed ${JSON.stringify(data)}`
+        );
+        return <InfoBlock key={data.id} data={data} />;
+      })}
+
       {/* <InfoBlock data={infoBlockData} />
       <InfoBlock data={{ ...infoBlockData, reversed: true }} /> */}
     </main>
