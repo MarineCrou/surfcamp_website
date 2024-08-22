@@ -4,6 +4,10 @@
   padding-right: 4.8rem;
   margin-top: 8rem;
 
+  &:last-of-type {
+    margin-bottom: 3.5rem; // Add margin-bottom to the last element on the page
+  }
+
   &--reversed {
     flex-direction: row-reverse;
     padding-left: 4.8rem;

@@ -17,7 +17,7 @@ export async function fetchDataFromStrapi(route) {
 export function processInfoBlocks(data) {
   const infoBlocksRaw = data.attributes.info_blocks.data;
   return infoBlocksRaw.map((infoBlock) => {
-    console.log(`🎉🎉🎉🎉${infoBlock.attributes.button}`);
+    // console.log(`🎉🎉🎉🎉${infoBlock.attributes.button}`);
     return {
       ...infoBlock.attributes, // spreads all properties within that element into a into a new
       imageSrc: BASE_URL + infoBlock.attributes?.image?.data.attributes.url, // creating a new property to Get image URL
