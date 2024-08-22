@@ -1,11 +1,12 @@
-const InfoBlock = ({ data }) => {
-  const { headline, text, showImageRight, imageSrc } = data;
-  //Changing reversed to showImageRight (as it's how we created it in strapi)
-  //button
-  // console.log(JSON.stringify(data));
+import ReactMarkdown from "react-markdown";
 
+const InfoBlock = ({ data }) => {
+  // console.log(data.button);
+  const { headline, text, ShowImageRight, imageSrc, button } = data;
+  //Changing reversed to showImageRight (as it's how we created it in strapi)
+  // console.log(JSON.stringify(data));
   return (
-    <div className={`info  ${showImageRight ? "info--reversed" : ""}`}>
+    <div className={`info  ${ShowImageRight ? "info--reversed" : ""}`}>
       {" "}
       {/* depending on the reversed boolean, it will apply the class or not */}
       <img
@@ -15,8 +16,8 @@ const InfoBlock = ({ data }) => {
       />
       <div className="info__text">
         <h2 className="info__headline">{headline}</h2>
-        {text}
-        {/* {button} */}
+        <ReactMarkdown className="copy">{text}</ReactMarkdown>
+        {button}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export default async function Home() {
   const data = await fetchDataFromStrapi("infoblocks-landing?populate=deep");
 
   const infoBlockData = processInfoBlocks(data);
-  console.log(infoBlockData);
+  // console.log(infoBlockData);
 
   const heroHeadline = (
     <>
@@ -21,14 +21,11 @@ export default async function Home() {
     <main>
       <HeroSection headline={heroHeadline} />
       {infoBlockData.map((data) => {
-        console.log(
-          `This is the PAGE data being passed ${JSON.stringify(data)}`
-        );
+        // console.log(
+        //   `This is the PAGE data being passed ${JSON.stringify(data)}`
+        // );
         return <InfoBlock key={data.id} data={data} />;
       })}
-
-      {/* <InfoBlock data={infoBlockData} />
-      <InfoBlock data={{ ...infoBlockData, reversed: true }} /> */}
     </main>
   );
 }
