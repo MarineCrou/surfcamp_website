@@ -12,11 +12,12 @@ const HighlightArticle = ({ data }) => {
         <Link className="btn btn--turquoise btn--medium" href={`/blog/${slug}`}>
           Read More
         </Link>
-        <img
-          src={featuredImage || "/assets/hero-experience.png"}
-          alt="Article Photo"
-        />
       </div>
+      <img
+        className="highlight-article__image"
+        src={featuredImage}
+        alt="Article Photo"
+      />
     </article>
   );
 };
