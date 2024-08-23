@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const HighlightArticle = ({ data }) => {
-  //   console.log(" The BLOG page 🎉 has been mounted");
+  //   console.log(" The BLOG component 🎉 has been mounted");
   const { headline, excerpt, slug, featuredImage } = data;
 
   return (
