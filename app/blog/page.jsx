@@ -13,7 +13,7 @@ export default function Page() {
   };
 
   return (
-    <main>
+    <main className="blog-page ">
       <HighlightArticle data={highlightArticleData} />
     </main>
   );
