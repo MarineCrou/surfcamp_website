@@ -1,4 +1,5 @@
 import HighlightArticle from "../_components/Blog/HighlightArticle";
+import SubscribeToNewsletter from "../_components/Blog/SubscribeToNewsletter";
 
 export default function Page() {
   console.log(" The BLOG page has been mounted");
@@ -15,6 +16,7 @@ export default function Page() {
   return (
     <main className="blog-page ">
       <HighlightArticle data={highlightArticleData} />
+      <SubscribeToNewsletter />
     </main>
   );
 }
