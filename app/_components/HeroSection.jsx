@@ -10,7 +10,7 @@ const HeroSection = ({ imgSrc, headline, theme = "turquoise" }) => {
       <div className={`hero__headline hero__headline--${theme}`}>
         {headline}
       </div>
-      <button className={`btn btn--medium btn--${theme}`}>
+      <button type="button" className={`btn btn--medium btn--${theme}`}>
         <Link href="/events">BOOK NOW</Link>
       </button>
       <img

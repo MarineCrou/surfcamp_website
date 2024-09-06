@@ -13,11 +13,11 @@ const SubscribeToNewsletter = () => {
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
     console.log("On submit has been clicked");
+    e.preventDefault();
     console.log("Current email:", email);
 
-    if (email.length) {
+    if (email.length > 0) {
       console.log("Email is valid, updating hasSignedUp state");
       setHasSignedUp(true);
     } else {

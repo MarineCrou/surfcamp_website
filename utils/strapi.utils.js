@@ -26,8 +26,7 @@ export function processInfoBlocks(data) {
     };
   });
 }
-
-// can also be written as follows
+// ! can also write it as follows :
 // export function processInfoBlocks(data) {
 //   const infoBlocksRaw = data.attributes.info_blocks.data;
 //   return infoBlocksRaw.map((infoBlock) => ({

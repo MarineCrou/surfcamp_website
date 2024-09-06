@@ -27,7 +27,9 @@ const Header = () => {
         ))}{" "}
       </ul>
       <Link className="header__button" href="/events">
-        <button className="btn btn--black btn--small">Book Now</button>
+        <button type="button" className="btn btn--black btn--small">
+          Book Now
+        </button>
       </Link>
     </header>
   );
