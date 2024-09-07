@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react"; // Creating a use state to track what the user is typing in the input section
+import axios from "axios";
 
 const SubscribeToNewsletter = () => {
   console.log("🎉 SubscribeToNewsletter component rendered 🎉");
@@ -12,14 +13,21 @@ const SubscribeToNewsletter = () => {
     setEmail(e.target.value);
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     console.log("On submit has been clicked");
     e.preventDefault();
-    console.log("Current email:", email);
 
     if (email.length > 0) {
       console.log("Email is valid, updating hasSignedUp state");
       setHasSignedUp(true);
+      await axios.post(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL / api / newsletter - signups}`,
+        {
+          data: {
+            email, //* email refers to the email useState. but because the field name and the inputed data are both called email, would amount to saying email=email, so shorthand is just `email`
+          },
+        }
+      );
     } else {
       console.log("Email is empty or invalid");
     }
