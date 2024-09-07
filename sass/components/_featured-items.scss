@@ -1,0 +1,50 @@
+// styling the FeaturedItems component
+.featured-items {
+  width: 100%;
+
+  // In the FeaturedItems component
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.25%;
+    // column-gap replaces the margin/padding on the left and right
+    row-gap: 6rem;
+  }
+
+  // In the FeaturedArticle component
+  &__article {
+    width: 32.5%;
+    display: flex;
+    flex-direction: column;
+  }
+  // In the FeaturedItems component
+  &__headline {
+    margin-bottom: 6rem;
+  }
+
+  // In the FeaturedArticle component
+  &__article-img {
+    width: 100%;
+    height: 35.5rem;
+
+    // * So the image fills in the previous requirements and fits perfectly in the 35.5rem height
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      //   we're making the object fit a cover, we need the aspect ratio to stay the same.
+      border-radius: 3.5rem 3.5rem 0 0;
+    }
+  }
+
+  &__article-text {
+    background-color: $light-brown;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 2rem 3rem 3.5rem;
+    border-radius: 0 0 3.5rem 3.5rem;
+    flex-grow: 1;
+    // the flex grow sets the container, so that if there is a lengthy headline, all of the flex containers will grow to match, to have an even presentation. Don't forget to set the parent component to a `display: flex`
+  }
+}
