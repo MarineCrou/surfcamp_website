@@ -8,7 +8,7 @@ export default async function Page() {
 
   // Fetching the data, No need to add axios here, as we already created a fetch data using axios in strapi.utils.js, called fetchDataFromStrapi
   const blogData = await fetchBlogArticles();
-  console.log(blogData);
+  // console.log(blogData);
 
   // 1. write different query strings : first one to find the highlighted blog article
   // easy version :

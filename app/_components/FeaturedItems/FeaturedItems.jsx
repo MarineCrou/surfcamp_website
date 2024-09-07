@@ -9,7 +9,11 @@ const FeaturedItems = ({ headline, items }) => {
   //We want to display 3 more articles, when we click on the see more button, to start off with. Multiples of 3.
 
   const onShowMore = () => {
-    setItemNumber(itemNumber + 3);
+    if (itemNumber + 3 > items.length) {
+      return setItemNumber(items.length);
+    } else {
+      return setItemNumber(itemNumber + 3);
+    }
   };
 
   return (
