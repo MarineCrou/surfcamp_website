@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { formatDate } from "@/utils/strapi.utils";
 
 const FeaturedArticle = ({ article }) => {
   return (
@@ -13,7 +14,7 @@ const FeaturedArticle = ({ article }) => {
         </div>
         <div className="featured-items__article-text">
           <h5>{article.headline}</h5>
-          <p className="copy-small">{article.date}</p>
+          <p className="copy-small">{formatDate(article.publishedAt)}</p>
         </div>
       </Link>
     </>

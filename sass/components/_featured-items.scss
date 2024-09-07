@@ -53,4 +53,7 @@
     flex-grow: 1;
     // the flex grow sets the container, so that if there is a lengthy headline, all of the flex containers will grow to match, to have an even presentation. Don't forget to set the parent component to a `display: flex`
   }
+  & p {
+    margin-top: 1.6rem;
+  }
 }
