@@ -14,6 +14,7 @@ const FeaturedItems = ({ headline, items }) => {
           /* The article being passed is the mapped `item`: {items.map((item)*/
         ))}
       </div>
+      <button className="btn btn--medium btn--turquoise">See more</button>
     </secton>
   );
 };
