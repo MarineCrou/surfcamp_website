@@ -1,7 +1,7 @@
 // ! Creating blueprint individual article page, with a dynamically attributed slug : https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 
-import { fetchBlogArticles } from "@/utils/strapi.utils";
-import { fetchDataFromStrapi } from "@/utils/strapi.utils";
+import ArticleIntro from "@/app/_components/Blog/ArticleIntro";
+import { fetchBlogArticles, fetchDataFromStrapi } from "@/utils/strapi.utils";
 
 // ? 2. it then gives that slug back to our component (page), through the params. An our component, that is by default serverside, will then fecth the data in strapi to display on the screen
 export default async function page({ params }) {
@@ -12,7 +12,8 @@ export default async function page({ params }) {
   const article = articles.find((article) => article.slug === slug);
   return (
     <main>
-      <h1>{article.headline}</h1>
+      {/* The article, is the articles we've fetched in Strapi */}
+      <ArticleIntro article={article} />
     </main>
   );
 }
