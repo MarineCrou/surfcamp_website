@@ -87,3 +87,6 @@ export default async function Page() {
     </main>
   );
 }
+
+export const revalidate = 300;
+// Make sure every 5 min (300s), whatever data is being fetched, will be updated

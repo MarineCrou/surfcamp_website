@@ -21,7 +21,7 @@ const SubscribeToNewsletter = () => {
       console.log("Email is valid, updating hasSignedUp state");
       setHasSignedUp(true);
       await axios.post(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL / api / newsletter - signups}`,
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/newsletter-signups`,
         {
           data: {
             email, //* email refers to the email useState. but because the field name and the inputed data are both called email, would amount to saying email=email, so shorthand is just `email`
