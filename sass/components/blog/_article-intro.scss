@@ -22,5 +22,15 @@
   &__headline {
     width: 59rem;
     margin-bottom: 2.4rem;
+
+    &--white {
+      color: white; //* Creating a white theme so the headline will turn white when background is dark.
+    }
+  }
+
+  & .copy-small {
+    &--white {
+      color: white; //* Creating a white theme so the headline will turn white when background is dark.
+    }
   }
 }
