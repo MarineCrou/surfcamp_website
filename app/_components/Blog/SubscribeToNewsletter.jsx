@@ -3,7 +3,7 @@ import { useState } from "react"; // Creating a use state to track what the user
 import axios from "axios";
 
 const SubscribeToNewsletter = () => {
-  console.log("🎉 SubscribeToNewsletter component rendered 🎉");
+  // console.log("🎉 SubscribeToNewsletter component rendered 🎉");
 
   const [email, setEmail] = useState("");
   const [hasSignedUp, setHasSignedUp] = useState(false);
@@ -15,7 +15,7 @@ const SubscribeToNewsletter = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("On submit has been clicked");
+    // console.log("On submit has been clicked");
 
     if (email.length > 0) {
       console.log("Email is valid, updating hasSignedUp state");
