@@ -9,13 +9,13 @@ const SubscribeToNewsletter = () => {
   const [hasSignedUp, setHasSignedUp] = useState(false);
 
   const onChange = (e) => {
-    console.log("Email input changed:", e.target.value);
     setEmail(e.target.value);
+    console.log("Email input changed:", e.target.value);
   };
 
   const onSubmit = async (e) => {
-    console.log("On submit has been clicked");
     e.preventDefault();
+    console.log("On submit has been clicked");
 
     if (email.length > 0) {
       console.log("Email is valid, updating hasSignedUp state");
