@@ -1,0 +1,10 @@
+.article-overview {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  margin-bottom: 12rem;
+
+  &__info {
+    width: 60%;
+  }
+}
