@@ -7,4 +7,21 @@
   &__info {
     width: 60%;
   }
+
+  &__contents {
+    padding-top: 17rem;
+    font-size: 3rem;
+    color: #0041e8;
+    list-style: none;
+    text-decoration: underline;
+    text-align: right;
+
+    & li {
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  &__headline {
+    margin-bottom: 2.4rem;
+  }
 }
