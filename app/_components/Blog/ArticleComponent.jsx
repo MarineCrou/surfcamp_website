@@ -24,7 +24,7 @@ const ArticleComponent = ({ component }) => {
     case "paragraph":
       return <h1>Paragraph Only !</h1>;
     case "landscape-image":
-      <h1>Lanscape Image</h1>;
+      return <h1>Lanscape Image</h1>;
     default:
       return <h1>😭😭😭😭😭</h1>;
   }
