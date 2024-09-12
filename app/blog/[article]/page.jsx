@@ -3,6 +3,7 @@
 
 import ArticleIntro from "@/app/_components/Blog/ArticleIntro";
 import ArticleOverview from "@/app/_components/Blog/ArticleOverview";
+import ArticleComponent from "@/app/_components/Blog/ArticleComponent";
 import { fetchBlogArticles, fetchDataFromStrapi } from "@/utils/strapi.utils";
 
 // ? 2. The slug is passed to this component through params.
@@ -15,12 +16,20 @@ export default async function page({ params }) {
   const articles = await fetchBlogArticles();
   const article = articles.find((article) => article.slug === slug); // Find the article with the matching slug
 
+  // console.log(article.articleContent);
+
   return (
     <main>
-      {/* Passing the fetched article data to the ArticleIntro and ArticleOverview components */}
+      <ArticleIntro article={article} />
+      {/* Passing the fetched article data to the ArticleOverview components */}
       <section className="article-section">
-        <ArticleIntro article={article} />
         <ArticleOverview article={article} />
+        {/* We're mapping through the json response from the article prop, fetching the articleContent array, where the different blog content-types defined by the strapi user has been defined.  
+        we're matching the articleContent object id and the component (__component) from the json response  */}
+
+        {article.articleContent.map((component) => (
+          <ArticleComponent key={component.id} component={component} />
+        ))}
       </section>
     </main>
   );
