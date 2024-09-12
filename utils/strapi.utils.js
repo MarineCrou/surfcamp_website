@@ -82,3 +82,8 @@ export function formatDate(dateString) {
   };
   return date.toLocaleDateString("en-us", options);
 }
+
+// For the ImageTextComponent
+export function extractImageUrl(imageData) {
+  return BASE_URL + imageData.data?.attributes?.url;
+}

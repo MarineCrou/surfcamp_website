@@ -2,6 +2,7 @@
 // This is where we'll be display the article according to how it was build out in strapi
 
 import ArticleHeadline from "./ArticleHeadline";
+import ImageTextComponent from "./ImageTextComponent";
 
 const ArticleComponent = ({ component }) => {
   //   console.log(component);
@@ -23,7 +24,7 @@ const ArticleComponent = ({ component }) => {
       //   return <h1>Headline!</h1>;
       return <ArticleHeadline headline={component} />;
     case "paragraph-with-image":
-      return <h1>Paragraph with image</h1>;
+      return <ImageTextComponent component={component} />;
     case "paragraph":
       return <h1>Paragraph Only !</h1>;
     case "landscape-image":

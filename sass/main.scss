@@ -9,7 +9,6 @@
 @import "./components/hero-section";
 @import "./components/info-block";
 @import "./components/featured-items";
-@import "./pages/blog.scss";
 @import "./components/input";
 
 @import "./components/blog/highlight-article";
@@ -17,3 +16,5 @@
 @import "./components/blog/article-intro";
 @import "./components/blog/article-overview";
 @import "./components/blog/_article-components.scss";
+
+@import "./pages/blog.scss";
