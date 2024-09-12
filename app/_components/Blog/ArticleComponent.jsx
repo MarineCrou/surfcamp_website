@@ -1,6 +1,8 @@
 // This component is fetching the json response from Strapi, where we've enable the user, to tailer their Articles with multiple different content/component types : eg: paragraph, paragraph with image, image...
 // This is where we'll be display the article according to how it was build out in strapi
 
+import ArticleHeadline from "./ArticleHeadline";
+
 const ArticleComponent = ({ component }) => {
   //   console.log(component);
   //   return <div>🎉🎉🎉🎉🎉🎉</div>; => testing if anything was being displayed on the article page, when mapping through the data (articleContent)
@@ -18,7 +20,8 @@ const ArticleComponent = ({ component }) => {
   //   componentType is a prop. could be called anything
   switch (componentType) {
     case "headline":
-      return <h1>Headline!</h1>;
+      //   return <h1>Headline!</h1>;
+      return <ArticleHeadline headline={component} />;
     case "paragraph-with-image":
       return <h1>Paragraph with image</h1>;
     case "paragraph":
