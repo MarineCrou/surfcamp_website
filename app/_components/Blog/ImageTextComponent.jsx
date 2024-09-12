@@ -1,13 +1,16 @@
 import { extractImageUrl } from "@/utils/strapi.utils";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
-ReactMarkdown;
-
 const ImageTextComponent = ({ component }) => {
   //   console.log(component.image.data.attributes.url);
   //   console.log(extractImageUrl(component.image)); => in the utils file
   return (
-    <div className="article-text-image">
+    <div
+      className={`article-text-image ${
+        component.isLandscape ? "" : "article-text-image--portrait"
+      }  
+      ${content.imageShowsRight ? "" : "article-text-image--reversed"}`}
+    >
       <ReactMarkdown className="copy article-text-image__image article-paragraph">
         {/* Importing react markdown to bring in the styling/formatting from strapi (Blod, Italic...) - We replaced the p tag by the React-Markdown*/}
         {component.paragraph}
@@ -28,14 +31,15 @@ const ImageTextComponent = ({ component }) => {
 
 export default ImageTextComponent;
 
-
 // The component prop can be destructured to directly access its properties like so:
 
 // const ImageTextComponent = ({ component }) => {
-//   const { image, paragraph, imageCaption } = component;
+//   const { image, paragraph, imageCaption, isLandscape, imageShowsRight } = component;
 
 //   return (
-//     <div className="article-text-image">
+//     <div className={`article-text-image ${
+//         isLandscape ? "" : "article-text-image--portrait"}
+//       ${imageShowsRight ? "" : "article-text-image--reversed"}`}">
 //       <ReactMarkdown className="copy article-text-image__image article-paragraph">
 //         {/* Importing react markdown to bring in the styling/formatting from strapi (Blod, Italic...) - We replaced the p tag by the React-Markdown*/}
 //         {paragraph}
