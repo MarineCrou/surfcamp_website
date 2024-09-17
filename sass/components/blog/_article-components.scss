@@ -4,3 +4,18 @@
   width: 100%;
   margin-bottom: 3rem;
 }
+
+// ImageTextComponent :
+.article-text-image {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+
+  &__text {
+    width: 42%;
+  }
+
+  &__container {
+    width: 55%;
+  }
+}
