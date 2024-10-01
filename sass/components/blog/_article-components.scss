@@ -11,11 +11,50 @@
   justify-content: space-between;
   margin-bottom: 6rem;
 
+  // Styling the image if it IS reversed, change drection + edit portrait distance to text:
+  &--reversed {
+    flex-direction: row-reverse;
+  }
+
+  &--portrait {
+    .article-text-image__container {
+      width: 29%;
+    }
+    .article-text-image__text {
+      width: 68%;
+    }
+  }
+
   &__text {
     width: 42%;
   }
 
   &__container {
     width: 55%;
+  }
+
+  &__image {
+    width: 100%; /* bc will be fill width across the full container*/
+    height: auto; /* As the height depends on the length of text. Image height should match text container height and be adaptive*/
+
+    & img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__caption {
+    color: #686868;
+  }
+}
+
+// ArticleParagraph component
+.article-paragraph {
+  margin-bottom: 6rem;
+
+  & ul {
+    margin-top: 2rem;
+    & li {
+      margin-left: 2rem;
+    }
   }
 }

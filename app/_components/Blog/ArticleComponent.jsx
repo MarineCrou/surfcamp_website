@@ -3,6 +3,7 @@
 
 import ArticleHeadline from "./ArticleHeadline";
 import ImageTextComponent from "./ImageTextComponent";
+import ArticleParagraph from "./ArticleParagraph";
 
 const ArticleComponent = ({ component }) => {
   //   console.log(component);
@@ -26,7 +27,7 @@ const ArticleComponent = ({ component }) => {
     case "paragraph-with-image":
       return <ImageTextComponent component={component} />;
     case "paragraph":
-      return <h1>Paragraph Only !</h1>;
+      return <ArticleParagraph paragraph={component} />;
     case "landscape-image":
       return <h1>Lanscape Image</h1>;
     default:

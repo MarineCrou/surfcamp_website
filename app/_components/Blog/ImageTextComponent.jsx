@@ -8,9 +8,9 @@ const ImageTextComponent = ({ component }) => {
     <div
       className={`article-text-image ${
         component.isLandscape ? "" : "article-text-image--portrait"
-      }${component.imageShowsRight ? "" : "article-text-image--reversed"}  `}
+      } ${component.imageShowsRight ? "" : "article-text-image--reversed"}  `}
     >
-      <ReactMarkdown className="copy article-text-image__image article-paragraph">
+      <ReactMarkdown className="copy article-text-image__text article-paragraph">
         {/* Importing react markdown to bring in the styling/formatting from strapi (Blod, Italic...) - We replaced the p tag by the React-Markdown*/}
         {component.paragraph}
       </ReactMarkdown>
