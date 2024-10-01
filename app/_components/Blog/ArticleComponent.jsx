@@ -4,6 +4,7 @@
 import ArticleHeadline from "./ArticleHeadline";
 import ImageTextComponent from "./ImageTextComponent";
 import ArticleParagraph from "./ArticleParagraph";
+import LandscapreImage from "./LandscapeImage";
 
 const ArticleComponent = ({ component }) => {
   //   console.log(component);
@@ -29,7 +30,7 @@ const ArticleComponent = ({ component }) => {
     case "paragraph":
       return <ArticleParagraph paragraph={component} />;
     case "landscape-image":
-      return <h1>Lanscape Image</h1>;
+      return <LandscapreImage imageData={component} />;
     default:
       return <h1>😭😭😭😭😭</h1>;
   }
