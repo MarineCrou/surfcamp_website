@@ -5,6 +5,7 @@ import ArticleIntro from "@/app/_components/Blog/ArticleIntro";
 import ArticleOverview from "@/app/_components/Blog/ArticleOverview";
 import ArticleComponent from "@/app/_components/Blog/ArticleComponent";
 import { fetchBlogArticles, fetchDataFromStrapi } from "@/utils/strapi.utils";
+import FeaturedItems from "@/app/_components/FeaturedItems/FeaturedItems";
 
 // ? 2. The slug is passed to this component through params.
 // The component, which is by default server-side rendered, fetches the data from Strapi using the slug to display the article.
@@ -18,6 +19,8 @@ export default async function page({ params }) {
 
   // console.log(article.articleContent);
 
+  const moreArticles = articles.filter((article) => article.slug !== slug); // Find the article who's slug does not match the current featured blog article
+
   return (
     <main>
       <ArticleIntro article={article} />
@@ -26,10 +29,14 @@ export default async function page({ params }) {
         <ArticleOverview article={article} />
         {/* We're mapping through the json response from the article prop, fetching the articleContent array, where the different blog content-types defined by the strapi user has been defined.  
         we're matching the articleContent object id and the component (__component) from the json response  */}
-
         {article.articleContent.map((component) => (
           <ArticleComponent key={component.id} component={component} />
         ))}
+        {/* Featuring the additional blog post articles, ar the bottom of the blog page */}
+        <FeaturedItems
+          items={moreArticles}
+          headline={"Explore our other articles"}
+        />
       </section>
     </main>
   );
@@ -41,7 +48,7 @@ export async function generateStaticParams() {
   // Fetch all blog articles from Strapi to retrieve their slugs
   const articles = await fetchDataFromStrapi("blog-articles");
 
-  // Map through the articles and return an array of slugs that Next.js will use to generate static pages
+  // ! Map through the articles and return an array of slugs that Next.js will use to generate static pages
   return articles.map((article) => ({
     article: article.attributes.slug, // Return the slug of each article
   }));
