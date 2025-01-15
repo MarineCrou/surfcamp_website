@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroSection from "./_components/HeroSection";
 import InfoBlock from "./_components/InfoBlock";
 import { fetchDataFromStrapi, processInfoBlocks } from "@/utils/strapi.utils";
+import BlogPreview from "./_components/BlogPreview/BlogPreview";
 
 export default async function Home() {
   const data = await fetchDataFromStrapi("infoblocks-landing?populate=deep");
@@ -25,6 +26,7 @@ export default async function Home() {
         // );
         return <InfoBlock key={data.id} data={data} />;
       })}
+      <BlogPreview />
     </main>
   );
 }
